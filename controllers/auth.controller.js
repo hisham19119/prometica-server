@@ -40,7 +40,6 @@ const register = async (req, res) => {
     // sameSite: "none", // Required for cross-origin
     domain: ".vercel.app", // Match your domain
     // maxAge: 86400000, // 1 day
-    path: "/",
   });
 
   res.status(201).json({
@@ -87,7 +86,6 @@ const login = async (req, res) => {
       // sameSite: "none", // Required for cross-origin
       domain: ".vercel.app", // Match your domain
       // maxAge: 86400000, // 1 day
-      path: "/",
     },
     res.send()
   );
