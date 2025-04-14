@@ -34,7 +34,7 @@ const register = async (req, res) => {
   res.cookie("token", token, {
     // httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "Strict",
+    // sameSite: "Strict",
     httpOnly: true,
     // secure: true, // Must be true in production
     sameSite: "none", // Required for cross-origin
@@ -77,7 +77,7 @@ const login = async (req, res) => {
   res.cookie("token", token, {
     // httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "Strict",
+    // sameSite: "Strict",
     httpOnly: true,
     // secure: true, // Must be true in production
     sameSite: "none", // Required for cross-origin
