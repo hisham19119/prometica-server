@@ -74,21 +74,17 @@ const login = async (req, res) => {
     { expiresIn: "7d" }
   );
 
-  res.cookie(
-    "token",
-    token,
-    {
-      // httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
-      httpOnly: true,
-      // secure: true, // Must be true in production
-      // sameSite: "none", // Required for cross-origin
-      domain: ".vercel.app", // Match your domain
-      // maxAge: 86400000, // 1 day
-    },
-    res.send()
-  );
+  res.cookie("token", token, {
+    // httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
+    httpOnly: true,
+    // secure: true, // Must be true in production
+    // sameSite: "none", // Required for cross-origin
+    domain: ".vercel.app", // Match your domain
+    // maxAge: 86400000, // 1 day
+    path: "/",
+  });
 
   res.json({
     message: "Login successful",
