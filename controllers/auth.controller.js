@@ -28,16 +28,16 @@ const register = async (req, res) => {
       name: newUser.name,
     },
     process.env.JWT_SECRET_KEY,
-    { expiresIn: "1d" }
+    { expiresIn: "7d" }
   );
 
   res.cookie("token", token, {
     // httpOnly: true,
-    // secure: process.env.NODE_ENV === "production",
-    // sameSite: "Strict",
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
     httpOnly: true,
-    secure: true, // Must be true in production
-    sameSite: "none", // Required for cross-origin
+    // secure: true, // Must be true in production
+    // sameSite: "none", // Required for cross-origin
     domain: ".vercel.app", // Match your domain
     maxAge: 86400000, // 1 day
   });
@@ -71,16 +71,16 @@ const login = async (req, res) => {
   const token = jwt.sign(
     { id: user._id, email: user.email, name: user.name },
     process.env.JWT_SECRET_KEY,
-    { expiresIn: "1d" }
+    { expiresIn: "7d" }
   );
 
   res.cookie("token", token, {
     // httpOnly: true,
-    // secure: process.env.NODE_ENV === "production",
-    // sameSite: "Strict",
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
     httpOnly: true,
-    secure: true, // Must be true in production
-    sameSite: "none", // Required for cross-origin
+    // secure: true, // Must be true in production
+    // sameSite: "none", // Required for cross-origin
     domain: ".vercel.app", // Match your domain
     maxAge: 86400000, // 1 day
   });
