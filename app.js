@@ -64,10 +64,11 @@ app.get("/", (req, res) => {
     message: "🚀 Prometica API is running successfully!",
     timestamp: new Date().toISOString(),
     version: "1.0.0",
-    environment: process.env.NODE_ENV || "Production",
+    environment: "Production",
   });
 });
 
 // app.listen("4000", () => {
 //   console.log("listening to port 4000 now .....");
 // });
+module.exports = app;
