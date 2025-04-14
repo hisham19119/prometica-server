@@ -38,7 +38,7 @@ const register = async (req, res) => {
     httpOnly: true,
     secure: true, // Must be true in production
     sameSite: "none", // Required for cross-origin
-    domain: ".vercel.app", // Match your domain
+    // domain: ".vercel.app", // Match your domain
     // maxAge: 86400000, // 1 day
   });
 
@@ -81,7 +81,7 @@ const login = async (req, res) => {
     httpOnly: true,
     secure: true, // Must be true in production
     sameSite: "none", // Required for cross-origin
-    domain: ".vercel.app", // Match your domain
+    // domain: ".vercel.app", // Match your domain
     // maxAge: 86400000, // 1 day
   });
 
