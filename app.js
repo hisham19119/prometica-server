@@ -35,16 +35,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use(
-//   cors({
-//     origin: "https://prometica.vercel.app",
-//     // origin: "http://localhost:3000",
-//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-//     // allowedHeaders: ["Content-Type"],
-//     credentials: true,
-//   })
-// );
-
 app.options("*", cors());
 
 app.use(express.json());
